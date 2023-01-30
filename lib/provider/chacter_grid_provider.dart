@@ -18,9 +18,7 @@ class CharcterGridPageProvider extends ChangeNotifier {
           .replaceAll('https://rickandmortyapi.com/api/character/', '');
       return element;
     }).toList();
-    print(chacterEpisodeList);
     await getMultipleCharacter();
-    //https://rickandmortyapi.com/api/character/1,183
   }
 
   getMultipleCharacter() async {
@@ -36,7 +34,6 @@ class CharcterGridPageProvider extends ChangeNotifier {
   }
 
   bool get isLoading => _isLoading;
-
   set isLoading(bool value) {
     _isLoading = value;
     notifyListeners();
