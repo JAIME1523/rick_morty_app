@@ -1,7 +1,7 @@
+import 'package:catalogo_juegos/ui/widgets/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
-
 
 import 'package:animate_do/animate_do.dart';
 import 'package:catalogo_juegos/model/models.dart';
@@ -11,7 +11,6 @@ import 'package:catalogo_juegos/ui/widgets/custom_botton.dart';
 import 'package:catalogo_juegos/utils/utils.dart';
 
 import 'widget/episode/episode_widget.dart';
-
 
 class CharacterInfoPage extends StatelessWidget {
   const CharacterInfoPage({Key? key, required this.character})
@@ -157,7 +156,7 @@ class _Info extends StatelessWidget {
                 SizedBox(
                   height: size.height * 0.03,
                 ),
-                _RowInfo(
+                RowInfo(
                   tex1: 'Specie',
                   text2: character.species!,
                 ),
@@ -165,7 +164,7 @@ class _Info extends StatelessWidget {
                 SizedBox(
                   height: size.height * 0.03,
                 ),
-                _RowInfo(
+                RowInfo(
                   tex1: 'Gender',
                   text2: character.gender.name,
                 ),
@@ -173,7 +172,7 @@ class _Info extends StatelessWidget {
                 SizedBox(
                   height: size.height * 0.03,
                 ),
-                _RowInfo(
+                RowInfo(
                   tex1: 'Origen Location',
                   text2: character.origin.name,
                 ),
@@ -181,7 +180,7 @@ class _Info extends StatelessWidget {
                 SizedBox(
                   height: size.height * 0.03,
                 ),
-                _RowInfo(
+                RowInfo(
                   tex1: 'Last known location',
                   text2: character.location.name,
                 ),
@@ -189,7 +188,7 @@ class _Info extends StatelessWidget {
                 SizedBox(
                   height: size.height * 0.03,
                 ),
-                _RowInfo(
+                RowInfo(
                   tex1: 'Status',
                   text2: character.status.name,
                 ),
@@ -210,7 +209,7 @@ class _Info extends StatelessWidget {
                         });
                   },
                   icon: Icons.ad_units,
-                  text: '',
+                  text: 'Episodes',
                 ),
                 SizedBox(
                   height: size.height * 0.01,
@@ -266,7 +265,7 @@ class _ListEpisode extends StatelessWidget {
                         ),
                         Expanded(
                           child: Container(
-                            padding:const EdgeInsets.only(bottom: 10, top: 5),
+                            padding: const EdgeInsets.only(bottom: 10, top: 5),
                             width: double.infinity,
                             height: 300,
                             child: ListView.builder(
@@ -275,11 +274,12 @@ class _ListEpisode extends StatelessWidget {
                                 physics: const BouncingScrollPhysics(
                                     parent: AlwaysScrollableScrollPhysics()),
                                 itemBuilder: (_, index) {
-                                  EpisodeModel episode =
+                                  EpisodesModelCharacter episode =
                                       characterInfoProvider.listEpisode[index];
                                   return FadeInLeft(
                                     delay: const Duration(milliseconds: 500),
-                                    child: CardInfoEpisode(size: size, episode: episode),
+                                    child: CardInfoEpisode(
+                                        size: size, episode: episode),
                                   );
                                 }),
                           ),
@@ -293,41 +293,6 @@ class _ListEpisode extends StatelessWidget {
     );
   }
 }
-
-
-class _RowInfo extends StatelessWidget {
-  const _RowInfo({
-    Key? key,
-    required this.tex1,
-    required this.text2,
-  }) : super(key: key);
-
-  final String tex1;
-  final String text2;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          '$tex1: ',
-          style: CustomStyleText.cardInfoTexth1,
-        ),
-        const SizedBox(
-          width: 10,
-        ),
-        Expanded(
-          child: Text(
-            text2,
-            style: CustomStyleText.cardInfoText,
-          ),
-        ),
-      ],
-    );
-  }
-}
-
 
 class _ImageHero extends StatelessWidget {
   const _ImageHero({

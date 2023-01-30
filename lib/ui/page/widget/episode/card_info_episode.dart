@@ -11,7 +11,7 @@ class CardInfoEpisode extends StatelessWidget {
   }) : super(key: key);
 
   final Size size;
-  final EpisodeModel episode;
+  final EpisodesModelCharacter episode;
 
   @override
   Widget build(BuildContext context) {

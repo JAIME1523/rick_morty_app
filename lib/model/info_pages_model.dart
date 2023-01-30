@@ -12,7 +12,7 @@ class InfoPagesModel {
 
     final int count;
     final int pages;
-     String? next;
+     dynamic next;
     final dynamic prev;
 
     factory InfoPagesModel.fromJson(String str) => InfoPagesModel.fromMap(json.decode(str));

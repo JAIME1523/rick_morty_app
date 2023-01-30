@@ -5,7 +5,7 @@ class GetEpisodeservice {
 
   static Future<EpisodesResponse> getPageCharacter() async {
     final resp = await ApiCharacter.httpGet(
-        'https://rickandmortyapi.com/api/character/?page=1');
+        'https://rickandmortyapi.com/api/episode');
     return EpisodesResponse.fromMap(resp);
   }
 

@@ -1,8 +1,8 @@
 
 import 'dart:convert';
 
-class EpisodeModel {
-    EpisodeModel({
+class EpisodesModelCharacter {
+    EpisodesModelCharacter({
         required this.id,
         required this.name,
         required this.airDate,
@@ -14,17 +14,17 @@ class EpisodeModel {
 
     final int id;
     final String name;
-    final String airDate;
+    final dynamic airDate;
     final String episode;
     final List<String> characters;
     final String url;
     final DateTime created;
 
-    factory EpisodeModel.fromJson(String str) => EpisodeModel.fromMap(json.decode(str));
+    factory EpisodesModelCharacter.fromJson(String str) => EpisodesModelCharacter.fromMap(json.decode(str));
 
     String toJson() => json.encode(toMap());
 
-    factory EpisodeModel.fromMap(Map<String, dynamic> json) => EpisodeModel(
+    factory EpisodesModelCharacter.fromMap(Map<String, dynamic> json) => EpisodesModelCharacter(
         id: json["id"],
         name: json["name"],
         airDate: json["air_date"],

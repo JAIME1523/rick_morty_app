@@ -54,9 +54,14 @@ class _Nav extends StatelessWidget {
     final navProvider = Provider.of<NavProvider>(listen: false, context);
 
     return CustomNavMenu(
+        // backgroundColor: CustomColors.backgroundColor,
+        // inactiveColor: CustomColors.bottomNavigationBarColor,
         backgroundColor: CustomColors.backgroundColor,
-        inactiveColor: CustomColors.bottomNavigationBarColor,
-        activeColor: CustomColors.yellowColor,
+        inactiveColor: CustomColors.purpleColor,
+
+        // const Color(0xff6989F5),
+        //             const Color(0xff906EF5)
+        activeColor: CustomColors.blueColor,
         items: [
           CustomNavButto(
               icon: FontAwesomeIcons.house,

@@ -10,7 +10,7 @@ class CharacterInfoProvider extends ChangeNotifier {
     filtro();
   }
   List? chacterEpisode;
-  List<EpisodeModel> listEpisode = [];
+  List<EpisodesModelCharacter> listEpisode = [];
   bool _isLoading = true;
 
   filtro() async {
@@ -27,7 +27,7 @@ class CharacterInfoProvider extends ChangeNotifier {
     try {
       final resp = await ApiCharacter.httpGet(
           'https://rickandmortyapi.com/api/episode/$chacterEpisode');         
-   listEpisode = List<EpisodeModel>.from(resp.map((x) => EpisodeModel.fromMap(x)));    
+   listEpisode = List<EpisodesModelCharacter>.from(resp.map((x) => EpisodesModelCharacter.fromMap(x)));    
       isLoading = false;
     } catch (e) {
       isLoading = false;

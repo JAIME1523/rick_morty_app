@@ -72,7 +72,7 @@ final genderValues = EnumValues({
   "Female": Gender.FEMALE,
   "Male": Gender.MALE,
   "unknown": Gender.UNKNOWN,
-  "genderless": Gender.GENDERLESS
+  "Genderless": Gender.GENDERLESS
 });
 
 class Location {
