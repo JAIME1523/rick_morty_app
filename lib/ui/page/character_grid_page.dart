@@ -1,5 +1,7 @@
+
 import 'package:catalogo_juegos/model/models.dart';
 import 'package:catalogo_juegos/provider/provider.dart';
+import 'package:catalogo_juegos/ui/page/widget/widget.dart';
 import 'package:catalogo_juegos/ui/tools/tools.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -88,7 +90,7 @@ class _BodyGridState extends State<_BodyGrid> {
                     // size: 20,
                   )),
               title: Column(
-                children: [
+                children: const [
                   Text('Episode:'),
                 ],
               ),
@@ -123,7 +125,10 @@ class _BodyGridState extends State<_BodyGrid> {
                           ],
                         ),
                         childrenDelegate: SliverChildBuilderDelegate(
-                            (context, index) => _CharacterItem(index: index),
+                            (context, index) => CharacterItemGrid(
+                                  index: index,
+                                  chacterInfo: providerChacrterGrid.chacterInfo,
+                                ),
                             childCount:
                                 providerChacrterGrid.chacterInfo.length),
                       )),
@@ -136,41 +141,11 @@ class _BodyGridState extends State<_BodyGrid> {
                   child: Text(
                     textAlign: TextAlign.center,
                     widget.episode.name,
-                    style: TextStyle(fontSize: 22),
+                    style:const TextStyle(fontSize: 22),
                   ))
-              : SizedBox()
+              : const SizedBox()
         ],
       )),
-    );
-  }
-}
-
-class _CharacterItem extends StatelessWidget {
-  final int index;
-
-  const _CharacterItem({
-    Key? key,
-    required this.index,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final providerChacrterGrid = Provider.of<CharcterGridPageProvider>(context);
-    final character = providerChacrterGrid.chacterInfo[index];
-    return Container(
-      decoration: BoxDecoration(
-          image: DecorationImage(
-            // scale: 2,
-            fit: BoxFit.fill,
-            image: FadeInImage.assetNetwork(
-                    // imageScale: 1,
-                    // fit: boxFit,
-                    placeholder: 'assets/loader.gif',
-                    image: character.image)
-                .image,
-          ),
-          color: Colors.blue,
-          borderRadius: BorderRadius.all(Radius.circular(30))),
     );
   }
 }

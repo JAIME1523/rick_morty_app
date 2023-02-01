@@ -75,12 +75,12 @@ class _Nav extends StatelessWidget {
               onPressed: () {
                 navProvider.viewStatus = ViewsStatus.episode;
               }),
-          CustomNavButto(
-              icon: FontAwesomeIcons.earthAmericas,
-              tilte: 'Location',
-              onPressed: () {
-                navProvider.viewStatus = ViewsStatus.location;
-              }),
+          // CustomNavButto(
+          //     icon: FontAwesomeIcons.earthAmericas,
+          //     tilte: 'Location',
+          //     onPressed: () {
+          //       navProvider.viewStatus = ViewsStatus.location;
+          //     }),
           CustomNavButto(
               icon: FontAwesomeIcons.a,
               tilte: 'gratitude',

@@ -4,7 +4,7 @@ class ApiCharacter {
   static final Dio _dio = Dio();
 
   static void configureDio() {
-    _dio.options.baseUrl = "https://rickandmortyapi.com/api";
+    // _dio.options.baseUrl = "https://rickandmortyapi.com/api";
   }
 
   static Future httpGet(String path) async {
@@ -13,7 +13,7 @@ class ApiCharacter {
 
       return resp.data;
     } catch (e) {
-      throw ('error en el Get');
+      // throw ('error en el Get');
     }
   }
 }

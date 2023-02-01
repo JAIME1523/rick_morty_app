@@ -6,8 +6,6 @@ class GratitudeView extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('GratitudeView'),
-    );
+    return const Center(child: Text('GratitudeView'));
   }
 }

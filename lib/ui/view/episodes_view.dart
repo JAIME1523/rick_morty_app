@@ -18,9 +18,9 @@ class EpisodesView extends StatelessWidget {
     return Builder(builder: (context) {
       final providerEpisode = Provider.of<EpisodeViewProvider>(context);
       return providerEpisode.listEpisode.isEmpty
-          ? CircularProgressIndicator()
+          ? const Center(child: CircularProgressIndicator())
           : Container(
-              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 2),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 2),
               height: size.height,
               width: size.width,
               child: ListView(
@@ -34,14 +34,14 @@ class EpisodesView extends StatelessWidget {
                     (episode) => Container(
                         margin: const EdgeInsets.symmetric(vertical: 20),
                         padding:
-                            EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                         const   EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                         width: double.infinity,
                         height: 150,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            gradient: LinearGradient(colors: [
-                              const Color(0xff6989F5),
-                              const Color(0xff906EF5)
+                            gradient: const LinearGradient(colors: [
+                               Color(0xFF6989F5),
+                               Color(0xFF906EF5)
                             ])),
                         child: SingleChildScrollView(
                           child: Column(
@@ -51,7 +51,7 @@ class EpisodesView extends StatelessWidget {
                                 tex1: 'Name',
                                 text2: episode.name,
                                 styleTex1: CustomStyleText.cardInfoTexth1
-                                    .copyWith(color: Color(0xff241b79)),
+                                    .copyWith(color:const Color(0xff241b79)),
                                 styleTex2: CustomStyleText.cardInfoText
                                     .copyWith(fontSize: 17),
                               ),
@@ -59,13 +59,13 @@ class EpisodesView extends StatelessWidget {
                                 tex1: 'Episode',
                                 text2: episode.episode,
                                 styleTex1: CustomStyleText.cardInfoTexth1
-                                    .copyWith(color: Color(0xff241b79)),
+                                    .copyWith(color: const Color(0xff241b79)),
                               ),
                               RowInfo(
                                 tex1: 'Air date',
                                 text2: episode.airDate,
                                 styleTex1: CustomStyleText.cardInfoTexth1
-                                    .copyWith(color: Color(0xff241b79)),
+                                    .copyWith(color:const  Color(0xff241b79)),
                               ),
                               const SizedBox(
                                 height: 5,
@@ -87,8 +87,8 @@ class EpisodesView extends StatelessWidget {
                         )),
                   ),
                   Container(
-                      width: 100,
-                      padding: const EdgeInsets.symmetric(horizontal: 25),
+                      width: 160,
+                      // padding: const EdgeInsets.symmetric(horizontal: 25),
                       child: CustomBotton(
                           onPressed: () {
                             providerEpisode.getNextPageEpisode();
@@ -101,6 +101,7 @@ class EpisodesView extends StatelessWidget {
   }
 }
 
+// ignore: unused_element
 class _RowInfo2 extends StatelessWidget {
   const _RowInfo2({
     Key? key,

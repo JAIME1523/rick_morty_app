@@ -1,5 +1,6 @@
 
 import 'package:catalogo_juegos/ui/tools/custom_style_text.dart';
+import 'package:catalogo_juegos/utils/get_color_status.dart';
 import 'package:flutter/material.dart';
 import 'package:catalogo_juegos/model/models.dart';
 
@@ -11,13 +12,13 @@ class CustomCard extends StatelessWidget {
     return Container(
       margin:const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
       width: double.infinity,
-      height: 230,
+      height: 260,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(18), color:const Color(0xFF3c3e44)),
       child: Row(
         children: [
           Container(
-            width: 160,
+            width: 150,
             decoration: BoxDecoration(
                 borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(18),
@@ -31,7 +32,7 @@ class CustomCard extends StatelessWidget {
                         .image)
                         
                         ),
-            height: 230,
+            // height: 230,
           ),
           Expanded(
               child: Container(
@@ -51,7 +52,7 @@ class CustomCard extends StatelessWidget {
                         height: 12,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(100),
-                            color: Colors.red)),
+                            color: GetColorStatus.status(character.status))),
                     Text(
                       character.status.name,
                       style: CustomStyleText.nameText,

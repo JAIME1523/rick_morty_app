@@ -11,7 +11,9 @@ void main() {
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (_) => GetCharacterProvider()),
     ChangeNotifierProvider(create: (_) => NavProvider()),
-    ChangeNotifierProvider( create: (_) => EpisodeViewProvider(),)
+    ChangeNotifierProvider( create: (_) => EpisodeViewProvider(),),
+    ChangeNotifierProvider(
+      create: (_) => SearchQuestionProvider(),)
   ], child: const MyApp()));
 }
 

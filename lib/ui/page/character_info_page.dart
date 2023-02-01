@@ -7,7 +7,6 @@ import 'package:animate_do/animate_do.dart';
 import 'package:catalogo_juegos/model/models.dart';
 import 'package:catalogo_juegos/provider/chacter_info_provider.dart';
 import 'package:catalogo_juegos/ui/tools/tools.dart';
-import 'package:catalogo_juegos/ui/widgets/custom_botton.dart';
 import 'package:catalogo_juegos/utils/utils.dart';
 
 import 'widget/episode/episode_widget.dart';
@@ -271,8 +270,8 @@ class _ListEpisode extends StatelessWidget {
                             child: ListView.builder(
                                 itemCount: characterInfoProvider
                                     .chacterEpisode!.length,
-                                physics: const BouncingScrollPhysics(
-                                    parent: AlwaysScrollableScrollPhysics()),
+                                // physics: const BouncingScrollPhysics(
+                                //     parent: AlwaysScrollableScrollPhysics()),
                                 itemBuilder: (_, index) {
                                   EpisodesModelCharacter episode =
                                       characterInfoProvider.listEpisode[index];
